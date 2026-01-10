@@ -1,4 +1,4 @@
-// Selection Sort in C++
+//Selection Sort Implementation
 #include <iostream>
 using namespace std;
 
@@ -17,8 +17,13 @@ void selectionSort(int arr[], int n) {
 }
 
 int main() {
-    int arr[] = {64, 25, 12, 22, 11};
-    int n = sizeof(arr) / sizeof(arr[0]);
+    int n;
+    cin >> n;
+
+    int arr[n];
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
 
     selectionSort(arr, n);
 

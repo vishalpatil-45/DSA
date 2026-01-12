@@ -1,0 +1,30 @@
+//Recursive Insertion Sort in C++
+#include <iostream>
+using namespace std;
+
+void insertionSort(int a[], int n) {
+    if (n <= 1) return;
+
+    insertionSort(a, n - 1);
+
+    int last = a[n - 1];
+    int j = n - 2;
+
+    while (j >= 0 && a[j] > last) {
+        a[j + 1] = a[j];
+        j--;
+    }
+    a[j + 1] = last;
+}
+
+int main() {
+    int n;
+    cin >> n;
+    int a[n];
+    for (int i = 0; i < n; i++) cin >> a[i];
+
+    insertionSort(a, n);
+
+    for (int i = 0; i < n; i++) cout << a[i] << " ";
+    return 0;
+}
